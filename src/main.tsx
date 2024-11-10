@@ -4,6 +4,7 @@ import '@src/global.css';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import LandingPage from '@src/components/pages/landing-page/landing-page'
 import SignIn from '@src/components/pages/auth/sign-in/sign-in';
+import SignUp from './components/pages/auth/sign-up/sign-up';
 
 const routes = createBrowserRouter([
   {
@@ -13,6 +14,10 @@ const routes = createBrowserRouter([
   {
     path: '/login',
     element: <SignIn/>
+  },
+  {
+    path: '/register',
+    element: <SignUp/>  
   }
 ]);
 
