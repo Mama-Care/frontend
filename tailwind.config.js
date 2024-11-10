@@ -20,6 +20,7 @@ export default {
       'primary-main': '#CCDDE2',
       'secondary-main': '#DF928E',
       'primary-text': '#3A3A3A',
+      'box-primary': '#FAFAFA',
     },
     fontFamily: {
       'sans': ['"Baloo Da 2"', 'sans-serif'],
