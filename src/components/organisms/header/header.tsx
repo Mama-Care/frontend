@@ -4,20 +4,34 @@ import LogoIcon from "@src/components/atoms/icons/logo";
 import Typography from "@src/components/atoms/typography/typography";
 import RenderCondition from "@src/components/no-visual/render-condition";
 import { IHeaderProps } from "@src/types/components/organisms/header";
+import { twMerge } from "tailwind-merge";
 
-const Header = ({ showButtons }: IHeaderProps) => {
+const Header = ({ showButtons, className, rightContent }: IHeaderProps) => {
   return (
-    <header className='flex w-screen p-7'>
+    <header className='flex p-7 bg-primary-main'>
       <nav className='w-full'>
         <Flex as='article' className='flex w-full justify-between'>
-          <Flex as='article' className='flex w-2/3 sm:gap-4 lg:gap-14'>
-            <LogoIcon />
-            <Typography className='text-[1.25rem]' as='span' weight='regular'>
+          <Flex as='article' className={twMerge('flex w-2/3 sm:gap-4 lg:gap-14', className)}>
+            <RenderCondition condition={!rightContent}>
+              <LogoIcon />
+            </RenderCondition>
+            <Typography 
+              className='text-[1.25rem] cursor-pointer hover:bg-secondary-main hover:text-[#fff] hover:px-2 transition-all duration-300 ease-in-out rounded-md' 
+              as='span' 
+              weight='regular'
+            >
               Sobre nós
             </Typography>
-            <Typography className='text-[1.25rem]' as='span' weight='regular'>
+            <Typography 
+              className='text-[1.25rem] cursor-pointer hover:bg-secondary-main hover:text-[#fff] hover:px-2 transition-all duration-300 ease-in-out rounded-md' 
+              as='span' 
+              weight='regular'
+            >
               Como usar?
             </Typography>
+            <RenderCondition condition={rightContent}>
+              <LogoIcon />
+            </RenderCondition>
           </Flex>
           <RenderCondition condition={showButtons}>
             <article className='flex justify-around gap-3'>
