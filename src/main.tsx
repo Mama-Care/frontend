@@ -4,6 +4,8 @@ import '@src/global.css';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import LandingPage from '@src/components/pages/landing-page/landing-page';
 import Home from '@src/components/pages/home/home';
+import SignIn from '@src/components/pages/auth/sign-in/sign-in';
+import SignUp from '@src/components/pages/auth/sign-up/sign-up';
 
 const routes = createBrowserRouter([
   {
@@ -13,6 +15,14 @@ const routes = createBrowserRouter([
   {
     path: '/home',
     element: <Home />
+  },
+  {
+    path: '/login',
+    element: <SignIn />
+  },
+  {
+    path: '/signup',
+    element: <SignUp />  
   }
 ]);
 
