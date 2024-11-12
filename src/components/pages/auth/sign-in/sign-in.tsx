@@ -11,18 +11,17 @@ const SignIn = () => {
       <Flex as="section" className="flex items-center justify-center flex-grow">
         <Flex as="article" className="bg-box-primary p-12 rounded-lg w-full max-w-md justify-center">
           <Flex as="section" className="flex flex-col gap-2 w-full">
-            <Typography as="h1" className="text-3xl font-bold text-left mb-6" weight="medium">
+            <Typography as="h1" className="text-3xl font-bold text-left mb" weight="medium">
               Login
             </Typography>
             <input
               type="email"
-              placeholder="example@email.com"
-              className="px-4 py-2 rounded-md border border-gray-200 focus:outline-none"
-            />
+              placeholder="E-mail"
+              className="px-4 py-2 border border-border-color rounded-md focus:outline-none" />
             <input
               type="password"
-              placeholder="*************"
-              className="px-4 py-2 rounded-md border border-gray-300 focus:outline-none"
+              placeholder="Senha"
+              className="px-4 py-2 border border-border-color rounded-md focus:outline-none"
             />
             <Typography
               as="p"
