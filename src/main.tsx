@@ -5,6 +5,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import LandingPage from '@src/components/pages/landing-page/landing-page'
 import SignIn from '@src/components/pages/auth/sign-in/sign-in';
 import SignUp from './components/pages/auth/sign-up/sign-up';
+import ForgotPassword from './components/pages/auth/forgot-password/forgot-password';
 
 const routes = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const routes = createBrowserRouter([
   {
     path: '/signup',
     element: <SignUp/>  
+  },
+  {
+    path: '/forgot-password',
+    element: <ForgotPassword/>
   }
 ]);
 
