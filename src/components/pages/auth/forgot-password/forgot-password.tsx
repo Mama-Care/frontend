@@ -6,9 +6,8 @@ import Input from "@src/components/atoms/input/input";
 
 const ForgotPassword = () => {
   return (
-    <Flex as="main" className="flex max-w-min w-full h-screen flex-col bg-primary-main">
-      <Header showButtons={false} />
-
+    <Flex as="main" className="flex w-full h-screen flex-col bg-primary-main">
+      <Header showButtons={false} rightContent={false} />
       <Flex as="section" className="flex items-center justify-center flex-grow">
         <Flex as="article" className="bg-box-primary p-12 rounded-lg w-full max-w-md">
           <Flex as="section" className="flex flex-col gap-3 w-full">

@@ -5,9 +5,8 @@ import Button from "@src/components/atoms/button/button";
 
 const SignIn = () => {
   return (
-    <Flex as="main" className="flex max-w-min w-full h-screen flex-col bg-primary-main">
-      <Header showButtons={false} />
-
+    <Flex as="main" className="flex w-full h-screen flex-col bg-primary-main">
+      <Header showButtons={false} rightContent={false} />
       <Flex as="section" className="flex items-center justify-center flex-grow">
         <Flex as="article" className="bg-box-primary p-12 rounded-lg w-full max-w-md justify-center">
           <Flex as="section" className="flex flex-col gap-2 w-full">
