@@ -8,6 +8,7 @@ import SignIn from '@src/components/pages/auth/sign-in/sign-in';
 import ForgotPassword from '@src/components/pages/auth/forgot-password/forgot-password';
 import SignUp from '@src/components/pages/auth/sign-up/sign-up';
 import AboutUs from '@src/components/pages/about-us/about-us';
+import HowTo from '@src/components/pages/how-to-use/how-to-use';
 
 const routes = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const routes = createBrowserRouter([
   {
     path: '/about-us',
     element: <AboutUs/>
+  },
+  {
+    path: '/how-to-use',
+    element: <HowTo/>
   }
 ]);
 
