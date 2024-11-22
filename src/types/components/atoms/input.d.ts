@@ -3,4 +3,6 @@ export interface IInputProps {
     placeholder?: string;
     className?: string;
     children?: ReactNode;
+    onChange?: (e: string) => void;
+    value?: string | number;
   }

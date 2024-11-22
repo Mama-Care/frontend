@@ -1,23 +1,31 @@
 import { IInputProps } from "@src/types/components/atoms/input";
 import { twMerge } from "tailwind-merge";
 import Flex from "@src/components/atoms/flex/flex";
+import React, { forwardRef } from 'react';
 
-const Input = ({ 
-  type = 'text', 
-  placeholder, 
-  className, 
-  children 
-}: IInputProps) => {
-    return (
-      <Flex as='article' className={twMerge('', className)}>
-        <input
-          type={type}
-          placeholder={placeholder}
-          className='focus:outline-none w-full'
-        />
-        {children}
-      </Flex>
-    );
-  };
-  
-  export default Input;
+const Input = forwardRef<HTMLInputElement, IInputProps>(({
+  type = 'text',
+  placeholder,
+  className,
+  children,
+  onChange,
+  value
+}, ref) => {
+  return (
+    <Flex as="article" className={twMerge('', className)}>
+      <input
+        ref={ref}
+        type={type}
+        placeholder={placeholder}
+        className="focus:outline-none w-full"
+        value={value}
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) => onChange?.(e.target.value)}
+      />
+      {children}
+    </Flex>
+  );
+});
+
+Input.displayName = 'Input';
+
+export default Input;
