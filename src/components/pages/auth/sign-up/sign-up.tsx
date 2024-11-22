@@ -98,7 +98,7 @@ const SignUp = () => {
             <Flex as="section" className="flex items-center">
               <input
                 type="checkbox"
-                className="w-4 h-4 text-primary-text border-secondary-main rounded focus:ring-secondary-main"
+                className="w-4 h-4 text-primary-text border border-secondary-main rounded-md focus:ring-secondary-main"
               />
               <label htmlFor="terms" className="ml-2 text-base text-primary-text">
                 Aceito os <span className="text-secondary-main hover:underline text-center cursor-pointer">termos e condições</span>
@@ -114,7 +114,7 @@ const SignUp = () => {
             </Button>
             <Flex as="section" className="flex items-center mt-1 mb-0">
               <hr className="flex-grow border-gray-300" />
-              <Typography as="p" className="mx-2 text-gray-500 text-sm" weight="regular">
+              <Typography as="p" className="mx-2 text-gray-500 text-sm border-border-color" weight="regular">
                 Ou continue com
               </Typography>
               <hr className="flex-grow border-gray-300" />

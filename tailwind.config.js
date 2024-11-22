@@ -21,6 +21,7 @@ export default {
       'secondary-main': '#DF928E',
       'primary-text': '#3A3A3A',
       'box-primary': '#FAFAFA',
+      'border-color': '#9AA5A6',
     },
     fontFamily: {
       'sans': ['"Baloo Da 2"', 'sans-serif'],

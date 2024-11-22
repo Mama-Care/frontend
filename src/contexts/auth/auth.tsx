@@ -4,8 +4,6 @@ import * as StorageService from '@src/services/storage';
 import { AuthApi } from "@src/repositories/auth/auth";
 import { IUser } from "@src/types/components/pages/signin";
 import { setAuthorizationHeader } from "@src/services/instance";
-import { AxiosError } from "axios";
-import { FirebaseError } from "firebase/app";
 import { toast } from "react-toastify";
 
 export const AuthContext = createContext<IAuthContextType>({} as IAuthContextType);
