@@ -11,7 +11,7 @@ const Header = ({ showButtons, className, rightContent }: IHeaderProps) => {
     <header className='flex p-7 bg-primary-main'>
       <nav className='w-full'>
         <Flex as='article' className='flex w-full justify-between'>
-          <Flex as='article' className={twMerge('flex w-2/3 sm:gap-4 lg:gap-14', className)}>
+          <Flex as='article' className={twMerge('flex w-2/3 sm:gap-4 lg:gap-14 items-end', className)}>
             <RenderCondition condition={!rightContent}>
               <LogoIcon />
             </RenderCondition>
