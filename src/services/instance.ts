@@ -3,10 +3,9 @@ import * as StorageService from '@src/services/storage';
 import Axios, { AxiosResponse } from 'axios';
 
 const axiosInstance = Axios.create({
-  baseURL: 'https://localhost:5173',
+  baseURL: 'http://localhost:3000',
   headers: {
     'Content-Type': 'application/json',
-    mode: 'cors'
   },
   timeout: 70000
 });
