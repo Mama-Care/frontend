@@ -9,7 +9,8 @@ const Input = forwardRef<HTMLInputElement, IInputProps>(({
   className,
   children,
   onChange,
-  value
+  value,
+  onKeyDown,
 }, ref) => {
   return (
     <Flex as="article" className={twMerge('', className)}>
@@ -19,7 +20,9 @@ const Input = forwardRef<HTMLInputElement, IInputProps>(({
         placeholder={placeholder}
         className="focus:outline-none w-full"
         value={value}
-        onChange={(e: React.ChangeEvent<HTMLInputElement>) => onChange?.(e.target.value)}
+        onChange={onChange}
+        onKeyDown={onKeyDown}
+
       />
       {children}
     </Flex>

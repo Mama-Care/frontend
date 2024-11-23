@@ -13,6 +13,7 @@ import { ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import AboutUs from '@src/components/pages/about-us/about-us';
 import HowTo from '@src/components/pages/how-to-use/how-to-use';
+import { ChatProvider } from './contexts/chat/chat';
 
 const routes = createBrowserRouter([
   {
@@ -23,7 +24,9 @@ const routes = createBrowserRouter([
     path: "/home",
     element: (
       <ProtectedRoute>
-        <Home />
+        <ChatProvider>
+          <Home />
+        </ChatProvider>
       </ProtectedRoute>
     ),
   },

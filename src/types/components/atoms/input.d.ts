@@ -3,6 +3,7 @@ export interface IInputProps {
     placeholder?: string;
     className?: string;
     children?: ReactNode;
-    onChange?: (e: string) => void;
+    onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
+    onKeyDown?: (e: KeyboardEvent<HTMLInputElement>) => void;
     value?: string | number;
   }
