@@ -7,4 +7,5 @@ export interface IAuthContextType {
   logout: () => void;
   loading: boolean;
   setLoading: React.Dispatch<React.SetStateAction<boolean>>;
+  userId: string;
 }

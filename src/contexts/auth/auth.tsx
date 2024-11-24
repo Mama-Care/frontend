@@ -5,6 +5,8 @@ import { AuthApi } from "@src/repositories/auth/auth";
 import { IUser } from "@src/types/components/pages/signin";
 import { setAuthorizationHeader } from "@src/services/instance";
 import { toast } from "react-toastify";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { firebaseApp } from "@src/config/firebase";
 
 export const AuthContext = createContext<IAuthContextType>({} as IAuthContextType);
 
@@ -12,6 +14,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [token, setToken] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
+  const [userId, setUserId] = useState<string>('');
+
+  const auth = getAuth(firebaseApp);
 
   const login = async (data: IUser, callback: {}) => {
     try {
@@ -38,6 +43,21 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }
   }, []);
 
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setUserId(user?.uid);
+        setIsAuthenticated(true);
+      } else {
+        setUserId('');
+        setIsAuthenticated(false);
+      }
+      setLoading(false);
+    });
+
+    return () => unsubscribe();
+  }, [auth]);
+
   const logout = () => {
     setToken('');
     StorageService.removeItem('session-token');
@@ -45,13 +65,14 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   };
 
   return (
-    <AuthContext.Provider value={{ 
+    <AuthContext.Provider value={{
       isAuthenticated, 
       token, 
       login, 
       logout,
       loading,
-      setLoading
+      setLoading,
+      userId
     }}>
       {children}
     </AuthContext.Provider>
