@@ -58,14 +58,14 @@ const SignIn = () => {
               placeholder="example@email.com"
               className="px-4 py-2 rounded-md border border-gray-200 focus:outline-none"
               value={form?.email}
-              onChange={(value: string) => onChange('email', value)}
+              onChange={(e) => onChange('email', e.target.value)}
             />
             <Input
               type="password"
               placeholder="*************"
               className="px-4 py-2 rounded-md border border-gray-300 focus:outline-none"
               value={form?.password}
-              onChange={(value: string) => onChange('password', value)}
+              onChange={(e) => onChange('password', e.target.value)}
             />
             <Typography
               as="p"

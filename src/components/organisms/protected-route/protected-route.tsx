@@ -1,5 +1,5 @@
 import { useAuth } from "@src/hooks/use-auth/use-auth";
-import { ReactNode, useEffect } from "react";
+import { ReactNode } from "react";
 
 import { Navigate } from "react-router-dom"; 
 import { PulseLoader } from "react-spinners";

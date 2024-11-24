@@ -22,7 +22,6 @@ const Input = forwardRef<HTMLInputElement, IInputProps>(({
         value={value}
         onChange={onChange}
         onKeyDown={onKeyDown}
-
       />
       {children}
     </Flex>
