@@ -11,6 +11,9 @@ import { useChat } from "@src/hooks/use-chat/use-chat";
 import { useEffect, useState } from "react";
 import { PulseLoader } from "react-spinners";
 
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+
 interface IChatHistory {
   sender: string | undefined;
   text: string | undefined;
@@ -84,26 +87,27 @@ const Home = () => {
         </RenderCondition>
 
         <RenderCondition condition={chatHistory.length > 0}>
-          <Flex as='article' className='flex w-[50rem] self-center'>
-            <Flex as='article' className='flex flex-col w-full items-start justify-start h-[25rem] overflow-y-scroll'>
+          <Flex as='article' className='flex w-[60rem] self-center'>
+            <Flex as='article' className='flex flex-col w-full items-start justify-start h-[50rem] overflow-y-scroll'>
               <RenderCondition condition={isLoading}>
                 <PulseLoader />
               </RenderCondition>
               {chatHistory.map((message, index) => (
-                <Flex
-                  as='article'
-                  key={index}
-                  className={`p-4 m-2 max-w-[30%] rounded-lg ${
-                    message?.sender === "user"
-                      ? "bg-[#9AA5A6] self-end"
-                      : "bg-secondary-main self-start"
-                  }`}
-                >
-                  <Typography as='span' weight='regular' className='text-[#fff]'>
-                    {message.text}
-                  </Typography>
-                </Flex>
-              ))}
+              <Flex
+                as='article'
+                key={index}
+                className={`p-4 m-2 max-w-[90%] rounded-lg ${
+                  message?.sender === "user"
+                    ? "bg-[#FAFAFA] self-end"
+                    : "bg-[#FAFAFA] self-start"
+                }`}
+              >
+                {/* Renderizando Markdown */}
+                <div className="prose prose-sm text-[#3A3A3A]">
+                  <ReactMarkdown remarkPlugins={[remarkGfm]}>{message.text || ""}</ReactMarkdown>
+                </div>
+              </Flex>
+            ))}
             </Flex>
           </Flex>
         </RenderCondition>

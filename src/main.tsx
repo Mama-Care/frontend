@@ -23,11 +23,11 @@ const routes = createBrowserRouter([
   {
     path: "/home",
     element: (
-      <ProtectedRoute>
+      //<ProtectedRoute>
         <ChatProvider>
           <Home />
         </ChatProvider>
-      </ProtectedRoute>
+      //</ProtectedRoute>
     ),
   },
   {
@@ -54,9 +54,9 @@ const routes = createBrowserRouter([
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <AuthProvider>
+    {/*<AuthProvider>*/}
       <ToastContainer />
       <RouterProvider router={routes} />
-    </AuthProvider>
+    {/*</AuthProvider>*/}
   </StrictMode>
 );
