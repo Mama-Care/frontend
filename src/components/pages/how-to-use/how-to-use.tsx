@@ -3,6 +3,7 @@ import Typography from "@src/components/atoms/typography/typography";
 import Header from "@src/components/organisms/header/header";
 import AboutUsImage from "@public/assets/images/how-to-use/motherhood.png";
 import Button from "@src/components/atoms/button/button";
+import { Link } from "react-router-dom";
 
 const HowTo = () => {
   return (
@@ -56,18 +57,20 @@ const HowTo = () => {
         >
           Estamos aqui para apoiar você nessa jornada tão importante!
         </Typography>
-        <Button 
-          className="mt-7 bg-secondary-main w-[15.375rem] h-[3.625rem] rounded-md" 
-          onClick={() => {}}
-        >
-          <Typography 
-            className="text-[#FFF] text-2xl" 
-            as="span" 
-            weight="regular"
+        <Link to={"/home"}>
+          <Button 
+            className="mt-7 bg-secondary-main w-[15.375rem] h-[3.625rem] rounded-md" 
+            onClick={() => {}}
           >
-            Comece agora
-          </Typography>
-        </Button>
+            <Typography 
+              className="text-[#FFF] text-2xl" 
+              as="span" 
+              weight="regular"
+            >
+              Comece agora
+            </Typography>
+          </Button>
+        </Link>
       </Flex>
       <Flex as="article" className="flex justify-center lg:w-2/2 p-6">
         <img 
