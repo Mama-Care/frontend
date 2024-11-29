@@ -5,6 +5,7 @@ import Typography from '@src/components/atoms/typography/typography';
 import Button from '@src/components/atoms/button/button';
 import useMediaQuery from '@src/hooks/use-media-query/use-media-query';
 import RenderCondition from '@src/components/no-visual/render-condition';
+import { Link } from 'react-router-dom';
 
 const LandingPage = () => {
   const isDesktop = useMediaQuery('(min-width: 1024px)');
@@ -38,11 +39,13 @@ const LandingPage = () => {
                       Nosso chat inteligente te oferece informações confiáveis sempre que <br />você precisar.
                     </Typography>
 
-                    <Button className='mt-6 bg-secondary-main w-[15.375rem] h-[3.625rem] rounded-md' onClick={() => {}}>
-                      <Typography className='text-[#FFF] text-2xl' as='span' weight='regular'>
-                        Comece agora
-                      </Typography>
-                    </Button>
+                    <Link to={'/how-to-use'}>
+                      <Button className='mt-6 bg-secondary-main w-[15.375rem] h-[3.625rem] rounded-md' onClick={() => {}}>
+                        <Typography className='text-[#FFF] text-2xl' as='span' weight='regular'>
+                          Comece agora
+                        </Typography>
+                      </Button>
+                    </Link>
                   </Flex>
                 </Flex>
 

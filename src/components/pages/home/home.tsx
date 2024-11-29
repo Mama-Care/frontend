@@ -87,8 +87,8 @@ const Home = () => {
         </RenderCondition>
 
         <RenderCondition condition={chatHistory.length > 0}>
-          <Flex as='article' className='flex w-[60rem] self-center'>
-            <Flex as='article' className='flex flex-col w-full items-start justify-start h-[50rem] overflow-y-scroll'>
+          <Flex as='article' className='flex w-[50rem] self-center'>
+            <Flex as='article' className='flex flex-col w-full items-start justify-start h-[40rem] overflow-y-scroll'>
               <RenderCondition condition={isLoading}>
                 <PulseLoader />
               </RenderCondition>
