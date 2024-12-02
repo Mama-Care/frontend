@@ -47,6 +47,7 @@ export default tseslint.config({
     ...react.configs['jsx-runtime'].rules,
   },
 })
-
-aaa
 ```
+
+## Observação
+Caso tente executar o projeto irá faltar os arquivos de configuração. É só entrar em contato conosco e disponibilizamos todos os arquivos necessários que estão separados por questões de segurança.
